@@ -18,13 +18,13 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
   font-size: 1.8rem;
-  color: ${palette.secondary};
+  color: ${({theme}) => theme.secondary};
   text-align: left;
   text-transform: uppercase;
 `;
 const Description = styled.p`
   font-size: 1.2rem;
-  color: ${palette.secondary};
+  color: ${({theme}) => theme.secondary};
   line-height: 1.4;
 
   a {

@@ -7,7 +7,7 @@ import Meal from '../assets/meal.svg'
 
 export const Main = styled.main`
   height: 100%;
-  background-color: ${palette.main};
+  background-color: ${({theme}) => theme.main};
   padding: 3.2rem 2.4rem;
   position: relative;
 
@@ -30,6 +30,8 @@ export const DateWrapper = styled.div`
 export const Number = styled.h2`
   font-size: 4.2rem;
   margin-right: 0.4rem;
+  color: ${({theme}) => theme.secondary};
+
 
   @media only screen and (min-width: 768px) {
     font-size: 5.4rem;
@@ -39,6 +41,7 @@ export const Number = styled.h2`
 export const Date = styled.h2`
   font-size: 1.2rem;
   text-transform: uppercase;
+  color: ${({theme}) => theme.secondary};
 
   @media only screen and (min-width: 768px) {
     font-size: 1.4rem;
@@ -51,11 +54,12 @@ export const AJVector = styled(Vector)`
   position: absolute;
   top: 5.4rem; right: 50%;
   transform: translate(50%,-50%);
+  fill: ${({theme}) => theme.secondary};
 `
 
 export const InfoWrapper = styled.div`
-  border-top: 0.1rem solid ${palette.secondary};
-  border-bottom: 0.1rem solid ${palette.secondary};
+  border-top: 0.1rem solid ${({theme}) => theme.secondary};
+  border-bottom: 0.1rem solid ${({theme}) => theme.secondary};
   padding: 0.2rem;
   display: flex;
   justify-content: center
@@ -63,6 +67,7 @@ export const InfoWrapper = styled.div`
 
 export const Info = styled.p`
   font-size: 1.4rem;
+  color: ${({theme}) => theme.secondary};
 `
 
 export const Wrapper = styled.div`
@@ -86,18 +91,29 @@ export const MainContentWrapper = styled.div`
 `
 
 export const MainImage = styled(Image)`
+  width: 100%;
+  height: 30rem;
   object-fit: cover;
   margin-bottom: 0.8rem;
 `
 
-export const StyledP = styled.p`
+export const StyledP = styled.p<{isPartyMode?: boolean}>`
   font-size: 1.4rem;
   text-align: justify;
   line-height: 1.4;
+  color: ${({theme}) => theme.secondary};
+
+  @media only screen and (min-width: 768px) {
+    margin-top: ${({isPartyMode}) => isPartyMode ? '4rem' : 0};
+  }
 `
 
 export const TextWrapper = styled.div`
   position: relative;
+`
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: 30rem;
 `
 
 export const HeadLine = styled.hr`
@@ -107,7 +123,7 @@ export const HeadLine = styled.hr`
     display: block;
     margin: 1.6rem 0 1.6rem;
     width: 100%;
-    background-color: ${palette.secondary};
+    background-color: ${({theme}) => theme.secondary};
   }
 `
 
@@ -116,11 +132,12 @@ export const Title = styled.h2`
   font-size: 1.8rem;
   margin: 1.6rem 0;
   text-transform: uppercase;
+  color: ${({theme}) => theme.secondary};
 
   @media only screen and (min-width: 768px) {
     margin: 0;
     position: absolute;
-    background-color: ${palette.main};
+    background-color: ${({theme}) => theme.main};
     top: -1rem;
   }
 `
