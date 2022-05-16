@@ -19,6 +19,8 @@ import {
   HeadLine,
   Title,
   Columns,
+  Hour,
+  DayWrapper,
 } from "../styles/Home";
 import first from "../assets/0.jpg";
 import second from "../assets/1.jpg";
@@ -33,7 +35,7 @@ import TextLoop from "react-text-loop";
 import toast from '../assets/brinde.jpg'
 import dressCode from '../assets/passeio.jpg'
 import don from '../assets/don.jpeg'
-import party from '../assets/noite.jpeg'
+import party from '../assets/noite.png'
 import { ThemeProvider } from "styled-components";
 
 const CONTENT = [
@@ -66,7 +68,7 @@ const CONTENT = [
 
 const NIGHT_CONTENT = [
   {
-    title: "Baile de formatura",
+    title: "Hora de celebrar a formatura e a vida",
     description:
       "Teremos bebidas e os docinhos ficam para o parabéns na virada do meu aniversário",
     image: toast,
@@ -77,7 +79,7 @@ const NIGHT_CONTENT = [
     image: dressCode,
   },
   {
-    title: "A festa Julina num lugar chique",
+    title: "O baile julino num lugar chique",
     description: (
       <a href="https://www.google.com/maps/place/DON+CONCEPT+HALL/@-26.9128852,-49.055223,15z/data=!4m2!3m1!1s0x0:0xade544b7d5ac8bdd?sa=X&ved=2ahUKEwi1gerLnLz3AhXIzYUKHYTPCkkQ_BJ6BAhZEAU">
       Don Concept Hall Rua Itajaí, 1047 - Vorstadt, Blumenau - SC
@@ -127,12 +129,14 @@ const Home: FC<{slug: string}> = ({slug}) => {
       <Main>
         <Header>
           <DateWrapper>
-            <Number>30</Number>
-            <Date>
-              julho <br />
-              2022 <br />
-              {isPartyMode ? '22h00' : '12h00'}
-            </Date>
+<DayWrapper>
+              <Number>30</Number>
+              <Date>
+                julho <br />
+                2022 <br />
+              </Date>
+</DayWrapper>
+              {isPartyMode ? <Hour>22h-4h</Hour> : <Hour>12h-15h</Hour>}
           </DateWrapper>
           <AJVector />
           <Switch

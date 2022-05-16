@@ -25,16 +25,21 @@ export const Header = styled.section`
 export const DateWrapper = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
+`
+export const DayWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export const Number = styled.h2`
-  font-size: 4.2rem;
+  font-size: 2.8rem;
   margin-right: 0.4rem;
   color: ${({theme}) => theme.secondary};
 
 
   @media only screen and (min-width: 768px) {
-    font-size: 5.4rem;
+    font-size: 2.8rem;
     margin-right: 0.4rem;
   }
 `
@@ -44,7 +49,16 @@ export const Date = styled.h2`
   color: ${({theme}) => theme.secondary};
 
   @media only screen and (min-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+`
+export const Hour = styled.h2`
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: ${({theme}) => theme.secondary};
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1.8rem;
   }
 `
 
@@ -145,8 +159,12 @@ export const Title = styled.h2`
 export const Columns = styled.div<{isFirstColumn?: boolean}>`
   grid-area: ${({isFirstColumn}) => isFirstColumn? `column1` : `column2`};
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({isFirstColumn}) => isFirstColumn? `column-reverse` : `column`};
   gap: 2.4rem;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const PartySvg = styled(Party)`
