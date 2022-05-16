@@ -12,7 +12,8 @@ export const Main = styled.main`
   position: relative;
 
   @media only screen and (min-width: 768px) {
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
   }
 `
 

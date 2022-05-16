@@ -70,7 +70,7 @@ const NIGHT_CONTENT = [
   {
     title: "Hora de celebrar a formatura e a vida",
     description:
-      "Teremos bebidas e os docinhos ficam para o parabéns na virada do meu aniversário",
+      "Teremos bebidas, já os docinhos ficam para o parabéns na virada do meu aniversário",
     image: toast,
   },
   {
